@@ -68,14 +68,14 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/housing-model:latest
+
       - name: Write Summary
         run: |
-        echo "## ML Pipeline Results - 2022BCS0042" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### Dataset Information" >> $GITHUB_STEP_SUMMARY
-        echo "- Training Samples: $(jq '.dataset_size' metrics.json)" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### Model Metrics" >> $GITHUB_STEP_SUMMARY
-        echo "- RMSE: $(jq '.rmse' metrics.json)" >> $GITHUB_STEP_SUMMARY
-        echo "- R2 Score: $(jq '.r2' metrics.json)" >> $GITHUB_STEP_SUMMARY
-    
+          echo "## ML Pipeline Results - 2022BCS0042" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Dataset Information" >> $GITHUB_STEP_SUMMARY
+          echo "- Training Samples: $(jq '.dataset_size' metrics.json)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Model Metrics" >> $GITHUB_STEP_SUMMARY
+          echo "- RMSE: $(jq '.rmse' metrics.json)" >> $GITHUB_STEP_SUMMARY
+          echo "- R2 Score: $(jq '.r2' metrics.json)" >> $GITHUB_STEP_SUMMARY
